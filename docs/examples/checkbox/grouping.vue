@@ -1,5 +1,5 @@
 <template>
-  <el-checkbox-group v-model="checkList">
+  <el-checkbox-group v-model="checkList" @change="checkedChange($event)">
     <el-checkbox label="Option A" />
     <el-checkbox label="Option B" />
     <el-checkbox label="Option C" />
@@ -10,6 +10,8 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-
+const checkedChange =(e) =>{
+  console.log(e)
+}
 const checkList = ref(['selected and disabled', 'Option A'])
 </script>
